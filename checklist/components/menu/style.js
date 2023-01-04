@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Menu = styled.div`
-  display: inline-flex;
+  display: flex;
   width: 20%;
   height: 100vh;
   background-color: #e3e3e3;
