@@ -8,4 +8,5 @@ export const Manager = styled.div`
     width: 300px;
     height: 300px;
     border-radius: 20px;
+    transition: 0.5s;
 `;

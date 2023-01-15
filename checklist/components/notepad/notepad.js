@@ -17,20 +17,17 @@ export default function Notepad({notes, notesCheckboxes, sendCheckboxes}) {
             <div className="mark">
               <div className={notesCheckboxes[index] ? "checkbox_true" : "checkbox_false"}
               id={index}
-              onClick={(e) => {
+              onClick={() => {
                 let temp = structuredClone(notesCheckboxes);
                 temp[index] = !temp[index];
                 sendCheckboxes(temp);
               }}
               tabIndex="0"
-              onKeyDown={(e) => {
-                if(e.keyCode == 13){
-                  notesCheckboxes[index] = !notesCheckboxes[index]; 
-                  if(e.target.className == 'checkbox_true'){e.target.className = 'checkbox_false'}
-                  else {e.target.className = 'checkbox_true'}
-                  sendCheckboxes(temp);
-              }
-              }}
+              onKeyDown={(e) => {if(e.keyCode === 13){
+                let temp = structuredClone(notesCheckboxes);
+                temp[index] = !temp[index];
+                sendCheckboxes(temp);
+              }}}
               ></div>
             </div>
             <div className="tabledata title">{note[0]}</div>

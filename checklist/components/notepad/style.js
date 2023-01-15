@@ -86,9 +86,11 @@ export const Notepad = styled.div`
 
     .date{
         width: 10%;
+        font-size: 1.5em;
     }
     .title{
         width: 20%;
+        font-size: 1.5em;
     }
 
     .tablerow:last-child{

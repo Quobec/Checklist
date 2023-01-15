@@ -2,13 +2,15 @@ import { useState } from 'react';
 import * as S from './style.js';
 
 export default function Manager({subjects}) {
+  
+  console.log()
 
-    const[checkboxes, setCheckboxes] = useState([]);
-    
-    return (
+
+  return (
       <>
-        <S.Manager onClick={(()=> { console.log(subjects)})}></S.Manager>
-
+        <S.Manager style={{right: subjects.every((e) => e === false) && "-310px"}} >
+          
+        </S.Manager>
       </>
     )
   }
