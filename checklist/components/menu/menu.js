@@ -1,19 +1,67 @@
 import * as S from './style.js'
-import { useRouter } from 'next/router';
 
-export default function Menu() {
+export default function Menu({changeNotes}) {
 
-  const router = useRouter();
   
   return(
 
     <S.Menu>
-      <S.Add      >Add</S.Add>
-      <S.Selector>Daily</S.Selector>
-      <S.Selector onClick={router.push('/weekly')}>Weekly</S.Selector>
-      <S.Selector>Monthly</S.Selector>
-      <S.Selector>Yearly</S.Selector>
-      <S.Selector>General</S.Selector>
+      <S.Add>Add</S.Add>
+      <S.Selector onClick={()=> {changeNotes([
+        ['title7','desc7','12.12.2012','12.12.2023'],
+        ['title8','desc8','12.12.2012','12.12.2023'],
+        ['title9','desc9','12.12.2012','12.12.2023'],
+        ['title10','desc10','12.12.2012','12.12.2023'],
+        ['title11','desc11','12.12.2012','12.12.2023'],
+        ['title12','desc12','12.12.2012','12.12.2023'],
+        ['title12','desc12','12.12.2012','12.12.2023'],
+        ['title12','desc12','12.12.2012','12.12.2023'],
+        ['title12','desc12','12.12.2012','12.12.2023'],
+        ['title12','desc12','12.12.2012','12.12.2023'],
+        ['title12','desc12','12.12.2012','12.12.2023'],
+        ['title12','desc12','12.12.2012','12.12.2023'],
+        ['title12','desc12','12.12.2012','12.12.2023'],
+        ['title12','desc12','12.12.2012','12.12.2023'],
+        ['title12','desc12','12.12.2012','12.12.2023'],
+        ['title12','desc12','12.12.2012','12.12.2023'],
+        ['title12','desc12','12.12.2012','12.12.2023'],
+        ['title12','desc12','12.12.2012','12.12.2023'],
+        ['title12','desc12','12.12.2012','12.12.2023'],
+        ['title12','desc12','12.12.2012','12.12.2023'],
+        ['title12','desc12','12.12.2012','12.12.2023'],
+      ])}}>Daily</S.Selector>
+      <S.Selector onClick={()=> {changeNotes([
+        ['title13','desc13','12.12.2012','12.12.2023'],
+        ['title14','desc14','12.12.2012','12.12.2023'],
+        ['title15','desc15','12.12.2012','12.12.2023'],
+        ['title16','desc16','12.12.2012','12.12.2023'],
+        ['title17','desc17','12.12.2012','12.12.2023'],
+        ['title18','desc18','12.12.2012','12.12.2023'],
+      ])}}>Weekly</S.Selector>
+      <S.Selector onClick={()=> {changeNotes([
+        ['title19','desc19','12.12.2012','12.12.2023'],
+        ['title20','desc20','12.12.2012','12.12.2023'],
+        ['title21','desc21','12.12.2012','12.12.2023'],
+        ['title22','desc22','12.12.2012','12.12.2023'],
+        ['title23','desc23','12.12.2012','12.12.2023'],
+        ['title24','desc24','12.12.2012','12.12.2023'],
+      ])}}>Monthly</S.Selector>
+      <S.Selector onClick={()=> {changeNotes([
+        ['title25','desc55','12.12.2012','12.12.2023'],
+        ['title26','desc26','12.12.2012','12.12.2023'],
+        ['title27','desc27','12.12.2012','12.12.2023'],
+        ['title28','desc28','12.12.2012','12.12.2023'],
+        ['title29','desc29','12.12.2012','12.12.2023'],
+        ['title30','desc30','12.12.2012','12.12.2023'],
+      ])}}>Yearly</S.Selector>
+      <S.Selector onClick={()=> {changeNotes([
+        ['title31','desc31  ','12.12.2012','12.12.2023'],
+        ['title32','desc32','12.12.2012','12.12.2023'],
+        ['title33','desc33','12.12.2012','12.12.2023'],
+        ['title34','desc34','12.12.2012','12.12.2023'],
+        ['title35','desc35','12.12.2012','12.12.2023'],
+        ['title36','desc36','12.12.2012','12.12.2023'],
+      ])}}>General</S.Selector>
     </S.Menu>
   )
 }

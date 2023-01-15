@@ -1,12 +1,27 @@
 import Head from 'next/head'
-//import { Inter } from '@next/font/google'
 import Menu from '../components/menu/menu.js'
 import Notepad from '../components/notepad/notepad.js'
 import * as S from './style.js'
-
-//const inter = Inter({ subsets: ['latin'] })
+import {useState, useEffect} from 'react';
+import Manager from '../components/manager/index.js';
 
 export default function Home() {
+
+  const [notesArray, setNoteArray] = useState([
+    ['title1','desc1','12.12.2012','12.12.2023'],
+    ['title2','hello this is table desccription welcome to my guide on how to ell a horses \
+    hoof lorem ipsum baba gugu','12.12.2012','12.12.2023'],
+    ['title3','desc3','12.12.2012','12.12.2023'],
+    ['title4','desc4','12.12.2012','12.12.2023'],
+    ['title5','desc5','12.12.2012','12.12.2023'],
+    ['title6','desc6','12.12.2012','12.12.2023'],
+  ]);
+  const [checkboxes, receiveCheckboxes] = useState([]);
+
+  useEffect(() => {
+    receiveCheckboxes(notesArray.map(() => false));
+  },[notesArray]);
+
   return (
     <>
       <Head>
@@ -16,8 +31,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <S.Main>
-        <Menu></Menu>
-        <Notepad></Notepad>
+        <Menu changeNotes={setNoteArray}></Menu>
+        <Notepad notes={notesArray} notesCheckboxes={checkboxes} sendCheckboxes={receiveCheckboxes}></Notepad>
+        <Manager subjects={checkboxes}></Manager>
       </S.Main>
     </>
   )

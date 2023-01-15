@@ -1,9 +1,45 @@
+import { useState, useEffect } from 'react'
 import * as S from './style.js'
 
-export default function Notepad() {
+export default function Notepad({notes, notesCheckboxes, sendCheckboxes}) {
   return (
     <>
-        <S.Notepad></S.Notepad>
+      <S.Notepad>
+        <div className="tablerow">
+          <div className="mark"></div>
+          <div className="tableheader title">Title</div>
+          <div className="tableheader">Description</div>
+          <div className="tableheader date">Date Added</div>
+          <div className="tableheader date">Date Due</div>
+        </div>
+        {notes.map((note, index) => (
+          <div className="tablerow" key={note.toString()+index}>
+            <div className="mark">
+              <div className={notesCheckboxes[index] ? "checkbox_true" : "checkbox_false"}
+              id={index}
+              onClick={(e) => {
+                let temp = structuredClone(notesCheckboxes);
+                temp[index] = !temp[index];
+                sendCheckboxes(temp);
+              }}
+              tabIndex="0"
+              onKeyDown={(e) => {
+                if(e.keyCode == 13){
+                  notesCheckboxes[index] = !notesCheckboxes[index]; 
+                  if(e.target.className == 'checkbox_true'){e.target.className = 'checkbox_false'}
+                  else {e.target.className = 'checkbox_true'}
+                  sendCheckboxes(temp);
+              }
+              }}
+              ></div>
+            </div>
+            <div className="tabledata title">{note[0]}</div>
+            <div className="tabledata">{note[1]}</div>
+            <div className="tabledata date">{note[2]}</div>
+            <div className="tabledata date">{note[3]}</div>
+          </div>
+        ))}
+      </S.Notepad>
     </>
   )
 }

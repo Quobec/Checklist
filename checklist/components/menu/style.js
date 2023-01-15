@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const Menu = styled.div`
   display: flex;
   width: 20%;
-  height: 100vh;
-  background-color: #e3e3e3;
+  height: 100%;
+  background-color: #666;
   flex-direction: column;
 `;
 
@@ -28,7 +28,7 @@ export const Add = styled.div`
 export const Selector = styled.div`
   width: 100%;
   height: 100px;
-  background-color: #eeeeee;
+  background-color: #ddd;
   display: flex;
   align-items: center;
   justify-content: center;
